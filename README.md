@@ -9,6 +9,7 @@ This repository presents the design of High Voltage Tolerant Level Shifter imple
   * [Reference Circuit Waveform](#reference-circuit-waveform)
 - [Simulation in Synopsys](#simulation-in-synopsys)
   * [Schematic](#schematic)
+  * [Symbol](#symbol)
   * [Parameters set for Pulse Voltage Source for VIN](#parameters-set-for-pulse-voltage-source-for-vin)
   * [Parameters set for DC Voltage Source for VDDL](#parameters-set-for-dc-voltage-source-for-vddl)
   * [Parameters set for DC Voltage Source for VDDH](#parameters-set-for-dc-voltage-source-for-vddh)
@@ -49,7 +50,11 @@ An HV-tolerant level shifter that shifts both digital levels from VDDH and Vbias
 
 # Simulation in Synopsys
 ## Schematic
-![image](https://user-images.githubusercontent.com/58599984/155003310-dc58ccd8-5dc6-4d4b-94a0-c6d212ab88d7.png)
+<p align="center">
+<img src=""></br>
+  Fig. 1: HV Tolerant Level shifter Reference circuit Diagram 
+</p>
+## Symbol
 ![image](https://user-images.githubusercontent.com/58599984/155003329-7643df8d-93fe-45a8-9809-77aa23e641ba.png)
 Note: The transmission gate using M24 nad M25 is soley used to separate the input and output just for the simulation purpose, to plot input and output separately.
 ## Parameters set for Voltage Source for Input A

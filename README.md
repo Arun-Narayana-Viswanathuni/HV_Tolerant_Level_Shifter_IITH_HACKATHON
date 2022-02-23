@@ -45,123 +45,152 @@ An HV-tolerant level shifter that shifts both digital levels from VDDH and Vbias
 ## Reference Circuit Waveform
 <p align="center">
 <img src="Images/Reference Circuit waveforms.jpeg"></br>
-  Fig. 1: HV Tolerant Level shifter Reference circuit Diagram 
+  Fig. 2: HV Tolerant Level shifter Reference Waveforms Diagram 
 </p>
 
 # Simulation in Synopsys
 ## Schematic
 <p align="center">
 <img src="Images/HV_Tolerant_LS_Schematic.png"></br>
-  Fig. 1: HV Tolerant Level shifter Reference circuit Diagram 
+  Fig. 3: HV Tolerant Level shifter Schematic 
 </p>
+
 ## Symbol
 <p align="center">
 <img src="Images/HV_Tolerant_LS_Symbol.png"></br>
-  Fig. 1: HV Tolerant Level shifter Reference circuit Diagram 
-</p
-Note: The transmission gate using M24 nad M25 is soley used to separate the input and output just for the simulation purpose, to plot input and output separately.
-## Parameters set for Voltage Source for Input A
-![image](https://user-images.githubusercontent.com/58599984/154890823-6743f686-9eed-4966-9420-56bd3a0ee0e2.png)
-## Parameters set for Voltage Source for Input B
-![image](https://user-images.githubusercontent.com/58599984/154891712-f6c4bfae-d422-4c86-8f40-9874719ed230.png)
+  Fig. 4: HV Tolerant Level shifter using Symbol reference 
+</p>
+Note: To make the CMOS Level circuit more compatible and Industry ready a Symbol reference has been created. So, it makes easy whenever a testbench of different Parameters needs to be tested.
+
+## Parameters set for Pulse Voltage Source for VIN
+<p align="center">
+<img src="Images/VIN PARAMETERS.png"></br>
+  Fig. 5: Pulse Voltage Source Input VIN set at 1.05V 
+</p>
+
+## Parameters set for DC Voltage Source for VDDL
+<p align="center">
+<img src="Images/VDDL PARAMETER SUPPLY.png"></br>
+  Fig. 6: Low VDD Supply set for the Inverter connection in the Circuit set at 1.05V 
+</p>
+
+## Parameters set for DC Voltage Source for VDDH
+<p align="center">
+<img src="Images/VDDH PARAMETER SUPPLY.png"></br>
+  Fig. 7: High Voltage Supply given at VDDH to check the Level Shift set at 3.3V 
+</p>
+
+## Parameters set for DC Voltage Source for Vbias
+<p align="center">
+<img src="Images/Vbias PARAMETER SUPPLY.png"></br>
+  Fig. 8: The Voltage Limiter (V-limit) from the Circuit Vbias is set at 0.6V
+</p>
 
 ## Transient Settings
-![image](https://user-images.githubusercontent.com/58599984/154890716-35c2d360-befc-4476-9041-c360d751f378.png)
+<p align="center">
+<img src="Images/TRANSIENT ANALYSIS INPUTS.png"></br>
+  Fig. 9: The Transient Analysis inputs Run at 1us step with stop time 30us 
+</p>
 
 ## Netlist
 ```
 *  Generated for: PrimeSim
-*  Design library name: Feynman_gate
-*  Design cell name: Feynman_gate
+*  Design library name: sm_hvt_levelshifter
+*  Design cell name: hvt_levelshifter_tb
 *  Design view name: schematic
 .lib 'saed32nm.lib' TT
-*Custom Compiler Version S-2021.09
-*Mon Feb 21 17:53:36 2022
-.global gnd! vdd!
-********************************************************************************
-* Library          : Feynman_gate
-* Cell             : Feynman_gate
-* View             : schematic
-* View Search List : hspice hspiceD schematic spice veriloga
-* View Stop List   : hspice hspiceD
-********************************************************************************
-xm24 p net80 a gnd! n105 w=0.1u l=0.03u nf=1 m=1
-xm7 net74 q b gnd! n105 w=0.1u l=0.03u nf=1 m=1
-xm6 q net74 b gnd! n105 w=0.1u l=0.03u nf=1 m=1
-xm5 net74 p gnd! gnd! n105 w=0.1u l=0.03u nf=1 m=1
-xm0 q b net74 gnd! n105 w=0.1u l=0.03u nf=1 m=1
-xm25 a gnd! p vdd! p105 w=0.1u l=0.03u nf=1 m=1
-xm4 p q b vdd! p105 w=0.1u l=0.03u nf=1 m=1
-xm3 q p b vdd! p105 w=0.1u l=0.03u nf=1 m=1
-xm2 q b p vdd! p105 w=0.1u l=0.03u nf=1 m=1
-xm1 net74 p net80 vdd! p105 w=0.1u l=0.03u nf=1 m=1
-v26 net80 gnd! dc=1.8
-v17 b gnd! dc=0.01 pulse ( 1.8 0 0.1n 0.1n 0.1n 2u 4u )
-v18 a gnd! dc=0.01 pulse ( 1.8 0 0.1n 0.1n 0.1n 1u 2u )
-.tran '1u' '20u' name=tran
-.option primesim_remove_probe_prefix = 0
-.probe v(*) i(*) level=1
-.probe tran v(a) v(b) v(p) v(q)
-.temp 25
-.option primesim_output=wdf
-.option parhier = LOCAL
-.end
-```
-## Waveform
-![image](https://user-images.githubusercontent.com/58599984/155003205-6933feb1-ec81-4627-8230-37746e44282a.png)
-# Interchanging the outputs and inputs
 
-## Schematic
-![image](https://user-images.githubusercontent.com/58599984/155004055-dc48126a-26dd-4999-89d2-43b3a89d3ebf.png)
-![image](https://user-images.githubusercontent.com/58599984/155004113-993a4526-4246-4214-a6da-bc1e19a51a54.png)
-## Netlist
-```
-*  Generated for: PrimeSim
-*  Design library name: Feynman_gate
-*  Design cell name: Feynman_gate
-*  Design view name: schematic
-.lib 'saed32nm.lib' TT
 *Custom Compiler Version S-2021.09
-*Mon Feb 21 17:41:35 2022
-.global gnd! vdd!
+*Wed Feb 23 02:17:30 2022
+
+.global gnd!
 ********************************************************************************
-* Library          : Feynman_gate
-* Cell             : Feynman_gate
+* Library          : sm_hvt_levelshifter
+* Cell             : hvt_levelshifter
 * View             : schematic
 * View Search List : hspice hspiceD schematic spice veriloga
 * View Stop List   : hspice hspiceD
 ********************************************************************************
-xm24 p net80 a gnd! n105 w=0.1u l=0.03u nf=1 m=1
-xm7 net74 q b gnd! n105 w=0.1u l=0.03u nf=1 m=1
-xm6 q net74 b gnd! n105 w=0.1u l=0.03u nf=1 m=1
-xm5 net74 p gnd! gnd! n105 w=0.1u l=0.03u nf=1 m=1
-xm0 q b net74 gnd! n105 w=0.1u l=0.03u nf=1 m=1
-xm25 a gnd! p vdd! p105 w=0.1u l=0.03u nf=1 m=1
-xm4 p q b vdd! p105 w=0.1u l=0.03u nf=1 m=1
-xm3 q p b vdd! p105 w=0.1u l=0.03u nf=1 m=1
-xm2 q b p vdd! p105 w=0.1u l=0.03u nf=1 m=1
-xm1 net74 p net80 vdd! p105 w=0.1u l=0.03u nf=1 m=1
-v26 net80 gnd! dc=1.8
-v17 q gnd! dc=0.01 pulse ( 1.8 0 0.1n 0.1n 0.1n 2u 4u )
-v18 p gnd! dc=0.01 pulse ( 1.8 0 0.1n 0.1n 0.1n 1u 2u )
-.tran '1u' '20u' name=tran
+.subckt hvt_levelshifter gnd_1 out vddh vddl vin
+xm8 net85 net94 gnd_1 gnd_1 n105 w=0.1u l=0.03u nf=1 m=1
+xm7 net83 vin gnd_1 gnd_1 n105 w=0.1u l=0.03u nf=1 m=1
+xm6 net43 net44 net85 gnd_1 n105 w=0.1u l=0.03u nf=1 m=1
+xm5 net39 net44 net83 gnd_1 n105 w=0.1u l=0.03u nf=1 m=1
+xm4 out net103 net19 net44 n105 w=0.1u l=0.03u nf=1 m=1
+xm3 net19 net51 net44 net44 n105 w=0.1u l=0.03u nf=1 m=1
+xm2 net9 out net44 net44 n105 w=0.1u l=0.03u nf=1 m=1
+xm1 net51 net63 net9 net44 n105 w=0.1u l=0.03u nf=1 m=1
+xm0 net94 vin gnd_1 gnd_1 n105 w=0.1u l=0.03u nf=1 m=1
+xm15 net63 net103 vddh vddh p105 w=0.1u l=0.03u nf=1 m=1
+xm14 net103 net63 vddh vddh p105 w=0.1u l=0.03u nf=1 m=1
+xm13 out net103 vddh vddh p105 w=0.1u l=0.03u nf=1 m=1
+xm12 net51 net63 vddh vddh p105 w=0.1u l=0.03u nf=1 m=1
+xm11 net94 vin vddl vddl p105 w=0.1u l=0.03u nf=1 m=1
+xm10 net43 net44 net63 vddh p105 w=0.1u l=0.03u nf=1 m=1
+xm9 net39 net44 net103 vddh p105 w=0.1u l=0.03u nf=1 m=1
+vbias net44 gnd! dc=0.6
+.ends hvt_levelshifter
+
+********************************************************************************
+* Library          : sm_hvt_levelshifter
+* Cell             : hvt_levelshifter_tb
+* View             : schematic
+* View Search List : hspice hspiceD schematic spice veriloga
+* View Stop List   : hspice hspiceD
+********************************************************************************
+xi0 gnd! out net8 net6 net10 hvt_levelshifter
+v6 net8 gnd! dc=3.3
+v5 net6 gnd! dc=1.05
+v9 net10 gnd! dc=1.05 pulse ( 0 1.05 0 0.1u 0.1u 5u 10u )
+
+
+
+
+
+
+
+
+.tran '1u' '30u' name=tran
+
 .option primesim_remove_probe_prefix = 0
 .probe v(*) i(*) level=1
-.probe tran v(a) v(b) v(p) v(q)
+.probe tran v(out) v(net10)
+
 .temp 25
+
+
+
 .option primesim_output=wdf
+
+
 .option parhier = LOCAL
+
+
+
+
+
+
 .end
+
 ```
 ## Waveform
-![image](https://user-images.githubusercontent.com/58599984/155003970-690e6a0e-0664-4543-96f0-a0aa1cea5a87.png)
+<p align="center">
+<img src="Images/HV_Tolerant_LS_Waveforms.png"></br>
+  Fig. 10: High Voltage level shift for 1.05V VIN to 3.3V VDDH Supply 
+</p>
+<p align="center">
+<img src="Images/PrimeSim Waveforms for HVTLS.png"></br>
+  Fig. 11: Simulation waveforms evident for Level Shift Tolerating High Voltage 
+</p>
+
 ## Conclusion
-Thus, the input and output can be interchanged in the Feynman Gate and the functionality of the Feynman Gate is verified using 32nm Technology node of Synopsys.
+Thus, A HV-tolerant level shifter that shifts both digital levels from VDDH and Vbias = VSS to Vbias = VDD and ground, respectively, can easily be derived from the one shown in Fig. 3 Schematic using a complementary circuit topology. Such complementary level shifter can be useful when designing the shootthrough control circuit presented in some integrated dc–dc converters. is verified using 28nm Technology node of Synopsys.
+
 ## Acknowledgement
 1. Kunal Ghosh, Co-founder, VSD Corp. Pvt. Ltd. - kunalpghosh@gmail.com
 2. Chinmay panda, IIT Hyderabad
 3. Sameer Durgoji, NIT Karnataka
 ## References
-1.	U. Kumar, L. Sahu and U. Sharma, "Performance evaluation of reversible logic gates," 2016 International Conference on ICT in Business Industry & Government (ICTBIG), 2016, pp. 1-4, doi: 10.1109/ICTBIG.2016.7892693.
-2.	A. K. Rajput, S. Chouhan and M. Pattanaik, "Low Power Boolean Logic Circuits using Reversible Logic Gates," 2019 International Conference on Advances in Computing, Communication and Control (ICAC3), 2019, pp. 1-6, doi: 10.1109/ICAC347590.2019.9036799.
+[1] Marcelino B. dos Santos, Member, IEEE “Level Shifters and DCVSL for a Low-Voltage CMOS 4.2-V Buck Converter”- 2008
+[2] Yang Yintang “A high performance 90 nm CMOS SAR ADC with hybrid architecture.”- 2010
 

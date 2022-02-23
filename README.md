@@ -42,7 +42,10 @@ An HV-tolerant level shifter that shifts both digital levels from VDDH and Vbias
 </p>
 
 ## Reference Circuit Waveform
-![image](https://user-images.githubusercontent.com/58599984/155004930-55f9993a-61f8-403f-a67d-c9c2d3c58a03.png)
+<p align="center">
+<img src=""></br>
+  Fig. 1: HV Tolerant Level shifter Reference circuit Diagram 
+</p>
 
 # Simulation in Synopsys
 ## Schematic

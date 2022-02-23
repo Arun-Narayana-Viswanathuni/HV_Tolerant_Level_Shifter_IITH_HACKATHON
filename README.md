@@ -51,11 +51,14 @@ An HV-tolerant level shifter that shifts both digital levels from VDDH and Vbias
 # Simulation in Synopsys
 ## Schematic
 <p align="center">
-<img src=""></br>
+<img src="Images/HV_Tolerant_LS_Schematic.png"></br>
   Fig. 1: HV Tolerant Level shifter Reference circuit Diagram 
 </p>
 ## Symbol
-![image](https://user-images.githubusercontent.com/58599984/155003329-7643df8d-93fe-45a8-9809-77aa23e641ba.png)
+<p align="center">
+<img src="Images/HV_Tolerant_LS_Symbol.png"></br>
+  Fig. 1: HV Tolerant Level shifter Reference circuit Diagram 
+</p
 Note: The transmission gate using M24 nad M25 is soley used to separate the input and output just for the simulation purpose, to plot input and output separately.
 ## Parameters set for Voltage Source for Input A
 ![image](https://user-images.githubusercontent.com/58599984/154890823-6743f686-9eed-4966-9420-56bd3a0ee0e2.png)

@@ -30,7 +30,10 @@ A High-Voltage (HV)-Tolerant Level Shifter with combinational functionality is p
 ## Synopsys Custom Compiler Tool Details
 The [Synopsys Custom Compiler™](https://www.synopsys.com/implementation-and-signoff/custom-design-platform/custom-compiler.html) design environment is a modern solution for full-custom analog, custom digital, and mixed-signal IC design. As the heart of the Synopsys Custom Design Platform, Custom Compiler provides design entry, simulation management and analysis, and custom layout editing features. It delivers industry-leading productivity, performance, and ease-of-use while remaining easy to adopt for users of legacy tools.
 
-![custom_compiler](https://github.com/bharath19-gs/6T_SRAM_CELL/blob/main/6T_SRAM/custom_compiler.png)
+<p align="center">
+<img src="Images/HV_Tolerant_LS_Schematic.png"></br>
+  Fig. 3: HV Tolerant Level shifter Schematic 
+</p>
 
 ## Reference Circuit Details
 

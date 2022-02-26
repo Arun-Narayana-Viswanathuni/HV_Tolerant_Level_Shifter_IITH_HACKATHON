@@ -190,7 +190,10 @@ Thus, A HV-tolerant level shifter that shifts both digital levels from VDDH and 
 1. Kunal Ghosh, Co-founder, VSD Corp. Pvt. Ltd. - kunalpghosh@gmail.com
 2. Chinmay panda, IIT Hyderabad
 3. Sameer Durgoji, NIT Karnataka
+4. [Synopsys Team/Company](https://www.synopsys.com/)
+
 ## References
 [1] Marcelino B. dos Santos, Member, IEEE “Level Shifters and DCVSL for a Low-Voltage CMOS 4.2-V Buck Converter”- 2008
+
 [2] Yang Yintang “A high performance 90 nm CMOS SAR ADC with hybrid architecture.”- 2010
 

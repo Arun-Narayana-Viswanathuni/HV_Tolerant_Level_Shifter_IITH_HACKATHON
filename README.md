@@ -4,6 +4,7 @@ This repository presents the design of High Voltage Tolerant Level Shifter imple
 
 # Table of Contents
    * [Abstract](#abstract)
+   * [Synopsys Custom Compiler Tool Details](#Synopsys-Custom-Compiler-Tool-Details)
   * [Reference Circuit Details](#reference-circuit-details)
   * [Reference Circuit Diagram](#reference-circuit-diagram)
   * [Reference Circuit Waveform](#reference-circuit-waveform)
@@ -25,6 +26,11 @@ This repository presents the design of High Voltage Tolerant Level Shifter imple
 ## Abstract
 
 A High-Voltage (HV)-Tolerant Level Shifter with combinational functionality is proposed based on conventional level shifters. This level shifter is tolerant to supply voltages higher than the process limit for individual CMOS transistors. The proposed HV level shifter is particularly useful when it is mandatory to constrain the output using a logic function during out of the normal mode periods (power-up, power-down, reset, etc.). This proposed level shifter is based on 28nm CMOS logic process. [1]
+
+## Synopsys Custom Compiler Tool Details
+The [Synopsys Custom Compiler™](https://www.synopsys.com/implementation-and-signoff/custom-design-platform/custom-compiler.html) design environment is a modern solution for full-custom analog, custom digital, and mixed-signal IC design. As the heart of the Synopsys Custom Design Platform, Custom Compiler provides design entry, simulation management and analysis, and custom layout editing features. It delivers industry-leading productivity, performance, and ease-of-use while remaining easy to adopt for users of legacy tools.
+
+![custom_compiler](https://github.com/bharath19-gs/6T_SRAM_CELL/blob/main/6T_SRAM/custom_compiler.png)
 
 ## Reference Circuit Details
 

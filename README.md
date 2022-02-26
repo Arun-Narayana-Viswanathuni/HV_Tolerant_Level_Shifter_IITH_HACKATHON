@@ -19,6 +19,7 @@ This repository presents the design of High Voltage Tolerant Level Shifter imple
   * [Netlist](#netlist)
   * [Waveform](#waveform)
   * [Conclusion](#conclusion)
+  * [Author:](#author)
   * [Acknowledgement](#Acknowledgement)
   * [References](#references)
 
@@ -194,6 +195,9 @@ v9 net10 gnd! dc=1.05 pulse ( 0 1.05 0 0.1u 0.1u 5u 10u )
 
 ## Conclusion
 Thus, A HV-tolerant level shifter that shifts both digital levels from VDDH and Vbias = VSS to Vbias = VDD and ground, respectively, can easily be derived from the one shown in Fig. 3 Schematic using a complementary circuit topology. Such complementary level shifter can be useful when designing the shootthrough control circuit presented in some integrated dc–dc converters. is verified using 28nm Technology node of Synopsys.
+
+## Author:
+Arun Narayana Viswanathuni, MTECH Research Student VLSI and Embedded Systems, G Pulla Reddy Engineering College Kurnool- 518002
 
 ## Acknowledgement
 
